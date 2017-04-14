@@ -1,0 +1,29 @@
+<div class="row">
+
+<!--left side-->
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr  ng-repeat="user in controller.users">
+        <td>{{user._id}}</td>
+        <td>{{user.username}}</td>
+        <td><button class="btn btn-link">edit</button></td>
+        <td><button class="btn btn-link" ng-click="controller.delete(user._id)">delete</button></td>
+      </tr>
+    </table>
+  </div>
+
+<!--right side-->
+<div class="col-md-6">
+  <form ng-submit="controller.add()">
+    Username: <input ng-model="controller.newUser.username" />
+    <button class="btn btn-primary">Add User</button>
+  </form>
+</div>
+
+</div>
